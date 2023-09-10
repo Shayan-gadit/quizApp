@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz App</title>
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- style.css link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- googlefont link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Lobster&family=Source+Serif+4:ital,opsz,wght@1,8..60,300&display=swap"
+        rel="stylesheet">
+    <!-- link closed -->
+    <!-- font-family: 'Dancing Script' -->
+</head>
+
+<body>
+    <!-- header quiz app -->
+    <div class="container text-light mt-5">
+        <!-- timer and question count -->
+        <div class="d-flex justify-content-between">
+            <h1 id="questionCount"></h1>
+
+            <!-- counter  -->
+            <div>
+                <h1 id="countdown"> 5:00</h1>
+            </div>
+            
+            <!-- counterend  -->
+        </div>
+        <hr >
+        <!-- question  -->
+        <div class="my-4">
+            <h1 id="questionText"></h1>
+        </div>
+        <!-- option section -->
+        <div class="row wor-gap-4" id="options">
+           
+    </div>
+            <!-- next button  -->
+            <div class="text-left  mt-3">
+                <button class="btn btn-outline-light px-4 py-2" onclick="nextQuestion()">next</button>
+            </div>
+        </div>
+
+    </div>
+   
+    <!-- bootstrap script link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!-- app.js link -->
+    <script src="app.js"></script>
+    <!-- coundown  -->
+    <script>
+       var start = 5;
+       var time = start * 60;
+       var countdown = document.getElementById("countdown");
+       setInterval ( updateCountDown,1000);
+       function updateCountDown() {
+        var minutes = Math.floor(time/60);
+        var seconds = time % 60;
+        countdown.innerHTML = `${minutes}: ${seconds}`;
+        time--;
+       }
+
+    </script>
+</body>
+
+</html>
